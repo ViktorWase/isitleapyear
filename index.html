@@ -3,22 +3,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="style_2.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h1>
-<span data-shadow-text="YES" align="center">YES</span>
+<span data-shadow-text="YES" align="center" id=demo></span>
+
+<script>
+var d = new Date();
+var year = d.getFullYear();
+console.log('year: ', year);
+var res = "Hello?"
+if( year%4 == 0){
+	if( (year%400 != 0) && (year%100 == 0) ){
+		res = "NO"
+	}
+	else{
+		res = "YES"
+	}
+}
+else{
+	res = "NO"
+}
+document.getElementById("demo").innerHTML = res;
+document.getElementById("demo").setAttribute("data-shadow-text", res);
+</script>
 </h1>
-<!--
-<div class="foo">
-  <span class="letter" data-letter="Y">Y</span>
-  <span class="letter" data-letter="E">E</span>
-  <span class="letter" data-letter="S">S</span>
-</div>
--->
+
 
 </body>
 </html>
-<!--
-<h1 style="text-align:center">YES</h1>
--->
