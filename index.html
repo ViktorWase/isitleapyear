@@ -10,23 +10,30 @@
 <span data-shadow-text="YES" align="center" id=demo></span>
 
 <script>
-var d = new Date();
-var year = d.getFullYear();
-console.log('year: ', year);
-var res = "Hello?"
-if( year%4 == 0){
-	if( (year%400 != 0) && (year%100 == 0) ){
-		res = "NO"
-	}
-	else{
-		res = "YES"
-	}
+console.log("Made by Viktor Wase")
+function isItLeapYear(){
+  var d = new Date();
+  var year = d.getFullYear();
+  console.log('year: ', year);
+  var res = "Hello?"
+  if( year%4 == 0){
+  	if( (year%400 != 0) && (year%100 == 0) ){
+  		res = "NO"
+  	}
+  	else{
+  		res = "YES"
+  	}
+  }
+  else{
+  	res = "NO"
+  }
+  document.getElementById("demo").innerHTML = res;
+  document.getElementById("demo").setAttribute("data-shadow-text", res);
+
+  setTimeout(isItLeapYear, 3000);
 }
-else{
-	res = "NO"
-}
-document.getElementById("demo").innerHTML = res;
-document.getElementById("demo").setAttribute("data-shadow-text", res);
+
+isItLeapYear();
 </script>
 </h1>
 
